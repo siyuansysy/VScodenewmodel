@@ -1,0 +1,214 @@
+/**
+ * 第4步 - 海报分享页
+ * 海报弹窗 + 外部按钮
+ */
+
+#step4 {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* 海报弹窗 */
+.poster-modal {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 85%;
+  height: 70%;
+  max-height: 600px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 400ms ease;
+  z-index: 100;
+}
+
+.poster-modal.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 海报内容 */
+.poster-content {
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/images/bg-v1.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.poster-title {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1A3A2F;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.poster-poem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.poster-line {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #1A3A2F;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.poster-signature {
+  font-size: 13px;
+  color: rgba(26, 58, 47, 0.8);
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.poster-guide {
+  font-size: 12px;
+  color: rgba(26, 58, 47, 0.7);
+  text-align: center;
+  line-height: 1.8;
+  max-width: 260px;
+  white-space: pre-line;
+}
+
+/* 海报外部按钮 - 白色文字，无背景无边框 */
+.poster-actions {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  z-index: 110;
+}
+
+.poster-actions .btn-icon {
+  color: #fff;
+  background: transparent;
+  border: none;
+}
+
+.poster-actions .btn-icon:hover {
+  opacity: 0.7;
+}
+
+.poster-actions .btn-icon svg {
+  stroke: #fff;
+}
+
+/* 分享浮层 */
+.share-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease;
+  z-index: 150;
+}
+
+.share-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.share-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 24px;
+  transform: translateY(100%);
+  transition: transform 300ms ease;
+  z-index: 200;
+}
+
+.share-sheet.active {
+  transform: translateY(0);
+}
+
+.share-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.share-options {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.share-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.share-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: transform 200ms ease;
+}
+
+.share-option:hover .share-icon {
+  transform: scale(1.1);
+}
+
+.share-icon.wechat { background: #07c160; }
+.share-icon.moments { background: #07c160; }
+.share-icon.xiaohongshu { background: #ff2442; }
+.share-icon.weibo { background: #e6162d; }
+
+.share-name {
+  font-size: 12px;
+  color: #666;
+}
+
+.share-cancel {
+  margin-top: 20px;
+  padding: 16px;
+  text-align: center;
+  font-size: 16px;
+  color: #1a1a1a;
+  background: #f5f5f5;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+
+.share-cancel:hover {
+  background: #e8e8e8;
+}

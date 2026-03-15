@@ -1,0 +1,96 @@
+/**
+ * 第3步 - 诗句生成页
+ * 主标题保持不动，下方显示诗句
+ */
+
+#step3 .bg-container {
+  background-image: url('../../assets/images/bg-v2.png');
+}
+
+/* 内容区域 - 诗句展示，大幅向上移动 */
+#step3 .content-area {
+  position: absolute;
+  top: 28%;
+  left: 40px;
+  right: 40px;
+  bottom: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* 诗句容器 - 固定高度，防止上下移动 */
+.poem-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  min-height: 200px;
+}
+
+/* 诗句行 - 深墨绿色，居中，固定高度 */
+.poem-line {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 400;
+  color: #1A3A2F;
+  line-height: 2;
+  text-align: center;
+  opacity: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 打字机光标 */
+.poem-line.typing::after {
+  content: '|';
+  margin-left: 2px;
+  animation: cursor-blink 1s infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* 落款 - 深墨绿色，往上移靠近五行诗 */
+.signature {
+  margin-top: 16px;
+  font-size: 14px;
+  color: rgba(26, 58, 47, 0.7);
+  font-style: italic;
+  opacity: 1;
+  text-align: center;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 操作按钮组 - 向下移动 */
+.action-buttons {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+}
+
+/* 小字说明 - 向下移动 */
+.note-text {
+  position: absolute;
+  bottom: 40px;
+  left: 24px;
+  right: 24px;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(26, 58, 47, 0.5);
+}

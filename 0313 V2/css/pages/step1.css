@@ -1,0 +1,98 @@
+/**
+ * 第1步 - 广告弹窗页
+ * 订单完成页背景 + 居中弹窗
+ */
+
+#step1 {
+  background: #f5f5f5;
+}
+
+#step1 .bg-container {
+  background-image: url('../../assets/images/screenshot.jpg');
+}
+
+#step1 .overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* 广告弹窗 */
+.ad-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: 80%;
+  max-width: 300px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease;
+  z-index: 100;
+}
+
+.ad-modal.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.ad-modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.ad-modal-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background: #00704a;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.ad-modal-btn:hover {
+  background: #006241;
+  transform: translateY(-2px);
+}
+
+.ad-modal-btn:active {
+  transform: translateY(0);
+}
+
+/* 关闭按钮 */
+.ad-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+
+.ad-modal-close:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.ad-modal-close svg {
+  width: 16px;
+  height: 16px;
+  stroke: #666;
+  stroke-width: 2;
+}

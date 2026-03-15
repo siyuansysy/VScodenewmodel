@@ -1,0 +1,375 @@
+/**
+ * 组件样式
+ * 按钮、弹窗、图标等可复用组件
+ */
+
+/* ========== 按钮组件 ========== */
+
+/* 主按钮 - 无背景无边框，干净融入 */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1A3A2F;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--transition-fast) ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.7;
+}
+
+.btn-primary:active {
+  opacity: 0.5;
+}
+
+/* 图标按钮 - 无背景无边框 */
+.btn-icon {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #1A3A2F;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--transition-fast) ease;
+}
+
+.btn-icon:hover {
+  opacity: 0.7;
+}
+
+.btn-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #1A3A2F;
+  stroke-width: 1.5;
+  margin-bottom: 6px;
+  transition: opacity var(--transition-fast) ease;
+}
+
+.btn-icon:hover svg {
+  transform: scale(1.1);
+}
+
+.btn-icon span {
+  opacity: 0.8;
+}
+
+/* 按钮组 - 横向排列 */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 0;
+}
+
+/* 关闭按钮 */
+.btn-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background var(--transition-fast) ease;
+}
+
+.btn-close:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.btn-close svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--color-text-light);
+  stroke-width: 2;
+}
+
+/* ========== 弹窗组件 ========== */
+
+/* 基础弹窗 */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: var(--color-text-light);
+  border-radius: 16px;
+  padding: 32px 28px;
+  width: 80%;
+  max-width: 320px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal) ease;
+  z-index: 100;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.modal-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background var(--transition-fast) ease;
+}
+
+.modal-btn:hover {
+  background: var(--color-primary-dark);
+}
+
+/* ========== 海报弹窗 ========== */
+
+.poster-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 75%;
+  max-height: 700px;
+  background: var(--color-text-light);
+  border-radius: 16px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-slow) ease;
+  z-index: 100;
+}
+
+.poster-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.poster-content {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 30px;
+}
+
+.poster-title {
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.poster-poem {
+  font-family: var(--font-title);
+  font-size: 20px;
+  line-height: 2.2;
+  color: var(--color-text-light);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.poster-signature {
+  font-size: 14px;
+  color: var(--color-text-light);
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.poster-guide {
+  font-size: 13px;
+  color: var(--color-text-light);
+  opacity: 0.7;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* 海报外部按钮区域 */
+.poster-actions {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  z-index: 110;
+}
+
+/* ========== 诗句展示 ========== */
+
+.poem-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.poem-line {
+  font-family: var(--font-title);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 300ms ease;
+}
+
+.poem-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.poem-line.typing::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ========== 分享浮层 ========== */
+
+.share-sheet {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-text-light);
+  border-radius: 20px 20px 0 0;
+  padding: 24px;
+  transform: translateY(100%);
+  transition: transform var(--transition-normal) ease;
+  z-index: 200;
+}
+
+.share-sheet.active {
+  transform: translateY(0);
+}
+
+.share-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-dark);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.share-options {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.share-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.share-option-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: transform var(--transition-fast) ease;
+}
+
+.share-option:hover .share-option-icon {
+  transform: scale(1.05);
+}
+
+.share-option-text {
+  font-size: 13px;
+  color: var(--color-text-dark);
+}
+
+.share-cancel {
+  margin-top: 20px;
+  padding: 16px;
+  text-align: center;
+  font-size: 16px;
+  color: var(--color-text-dark);
+  background: #f5f5f5;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* ========== 工具类 ========== */
+
+.hidden {
+  display: none !important;
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-normal) ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.scale-in {
+  animation: scaleIn var(--transition-normal) ease forwards;
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}

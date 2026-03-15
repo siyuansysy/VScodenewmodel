@@ -1,0 +1,84 @@
+/**
+ * 第2步 - 互动入口页
+ * bg V1背景 + 主标题 + 正文 + 按钮
+ */
+
+#step2 .bg-container {
+  background-image: url('../../assets/images/bg-v2.png');
+}
+
+/* 内容区域 - 在主标题下方，整体下移，button与第3步对齐 */
+#step2 .content-area {
+  position: absolute;
+  top: 30%;
+  left: 40px;
+  right: 40px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* 问候语 - 深墨绿色，居中，缩小行间距 */
+.greeting {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1A3A2F;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* 正文 - 深墨绿色，居中，行间距一致 */
+.body-text {
+  font-size: 15px;
+  line-height: 2;
+  color: #1A3A2F;
+  font-weight: 300;
+  white-space: pre-line;
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+/* 高亮数字 - 50放大加粗，与左右文字有间距 */
+.highlight-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00704a;
+  padding: 0 4px;
+}
+
+/* 开始按钮 - 与第1步按钮样式一致 */
+.start-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background: #00704a;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.start-btn:hover {
+  background: #006241;
+  transform: translateY(-2px);
+}
+
+.start-btn:active {
+  transform: translateY(0);
+}
+
+/* 小字说明 - 深绿色半透明，上移靠近按钮 */
+.note-text {
+  position: absolute;
+  bottom: 100px;
+  left: 24px;
+  right: 24px;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(26, 58, 47, 0.5);
+}
